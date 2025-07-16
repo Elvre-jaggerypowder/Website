@@ -1,0 +1,124 @@
+.hero-section {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 1s ease-in-out;
+  overflow: hidden;
+  padding: 80px 30px;
+} 
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  max-width: 1500px;
+
+}
+
+.hero-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+  z-index: 2;
+  position: relative;
+}
+
+.hero-logo-img {
+  width: 100%;
+  height: auto;
+  max-width: 150px;
+  display: block;
+  margin: 0 auto;
+}
+
+.hero-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  z-index: 2;
+}
+
+.hero-title h1 {
+  font-size: 80px;
+  letter-spacing: 5px;
+  font-weight: bold;
+}
+
+.typing {
+  font-size: 80px;
+  font-weight: bold;
+  border-right: 2px solid #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: blink 0.75s infinite;
+}
+
+@keyframes blink {
+  0% { border-color: transparent; }
+  50% { border-color: white; }
+  100% { border-color: transparent; }
+}
+
+.hero-bottom-text {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  text-align: center;
+  z-index: 2;
+}
+
+.hero-bottom-text p {
+  font-size: 24px;
+  margin: 5px 0;
+}
+
+.hero-title {
+  text-align: center;
+  font-size: 60px;
+  margin-top: 40px;
+}
+
+.hero-bottom-text {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 20px;
+}
+@media (max-width: 768px) {
+  .hero-bottom-text p {
+    font-size: 14px;
+  }
+
+  .hero-logo-img {
+    width: 120px;
+  }
+}
+/* 📱 Tablet screen ke liye */
+@media (max-width: 768px) {
+  .typing {
+    font-size: 46px;
+  }
+}
+
+/* 📱 Mobile screen ke liye */
+@media (max-width: 480px) {
+  .typing {
+    font-size: 32px;
+    padding: 0 10px;
+    word-break: break-word;
+  }
+  .hero-logo-img{
+    margin-top: 50px;
+  }
+}

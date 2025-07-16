@@ -1,0 +1,43 @@
+.testimonial-list-section {
+  background: rgb(24, 56, 24);
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.testimonial-title {
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.testimonial-item {
+  background: #fff;
+  padding: 1.2rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-message {
+  font-style: italic;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.testimonial-author {
+  font-weight: bold;
+  color: #555;
+}
+
+.no-feedback {
+  color: white;
+  font-style: italic;
+}
