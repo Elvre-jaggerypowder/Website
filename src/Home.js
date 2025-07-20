@@ -1,38 +1,31 @@
-// src/Home.js
-
-import React, { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import React from "react";
 
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
 import AboutSection from "./components/AboutSection";
+import MadeSection from "./components/MadeSection";
 import ProductSection from "./components/ProductSection";
-import BenefitSection from "./components/BenefitsSection";
-import UsesSection from "./components/UsesSection";
-import FooterSection from "./components/FooterSection";
-import FloatingButtons from "./components/FloatingButtons";
-import TestimonialList from "./components/TestimonialList";
+import AgriSection from "./components/AgriSection";
+import BenefitSection from "./components/BenefitSection";
+import Testimonial from "./components/Testimonial";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
-function Home() {
-  useEffect(() => {
-    AOS.init({ duration: 2000, once: false });
-  }, []);
-
+const Home = () => {
   return (
     <>
       <Navbar />
       <HeroSection />
       <AboutSection />
+      <MadeSection />
       <ProductSection />
+      <AgriSection />
       <BenefitSection />
-      <UsesSection />
-      < TestimonialList />
-      <FooterSection />
-      <FloatingButtons />
-      
+      <Testimonial />
+      <Contact />
+      <Footer />
     </>
   );
-}
+};
 
 export default Home;

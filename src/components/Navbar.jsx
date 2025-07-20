@@ -1,30 +1,22 @@
 import React from 'react';
 import './Navbar.css';
+import { Link as ScrollLink } from 'react-scroll';
 
-function Navbar() {
+const Navbar = () => {
   return (
     <header className="navbar">
       <div className="logo">
-        <img src="ELVRElogo1.png" alt="ELVRE Logo" />
+        <img src={`${process.env.PUBLIC_URL}/assets/ELVRElogo1.png`} alt="Elvre Logo" />
       </div>
-
-      <button className="menu-toggle" onClick={() => {
-        const nav = document.getElementById("mainNav");
-        nav.classList.toggle("active");
-      }}>
-        ☰
-      </button>
-
-      <nav id="mainNav">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#product">Product</a>
-        <a href="#benefits">Benefits</a>
-        <a href="#uses">Uses</a>
-        <a href="#contact">Contact</a>
+      <nav className="nav-links">
+        <ScrollLink to="hero" smooth={true} duration={500} offset={-70}>Home</ScrollLink>
+        <ScrollLink to="about" smooth={true} duration={500} offset={-70}>About Us</ScrollLink>
+        <ScrollLink to="product" smooth={true} duration={500} offset={-70}>Our Products</ScrollLink>
+        <ScrollLink to="testimonial" smooth={true} duration={500} offset={-70}>Testimonial</ScrollLink>
+        <ScrollLink to="contact" smooth={true} duration={500} offset={-70}>Contact Us</ScrollLink>
       </nav>
     </header>
   );
-}
+};
 
 export default Navbar;

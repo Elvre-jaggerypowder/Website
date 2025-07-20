@@ -1,0 +1,42 @@
+.benefits-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 1rem 0.5rem;
+  background-color: rgb(210, 194, 95);
+}
+
+.benefit-card {
+  position: relative;
+  width: 400px;
+  height: 110px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.benefit-text1{
+  font-family: 'Livvic';
+  color: white;
+  font-weight: 500;
+  font-size: 1rem;
+  margin-left: 90px;
+}
+.benefit-text2{
+  font-family: 'Livvic';
+  color: white;
+  font-weight: 500;
+  font-size: 1rem;
+  margin-left: 90px;
+}
+.benefit-text3{
+  font-family: 'Livvic';
+  color: white;
+  font-weight: 500;
+  font-size: 1rem;
+  margin-left: 100px;
+}

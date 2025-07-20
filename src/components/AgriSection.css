@@ -1,0 +1,43 @@
+.modern-agriculture-section {
+  position: relative;
+  padding: 60px 80px;
+  min-height: 140vh;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.modern-agriculture-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+}
+
+.modern-agriculture-subheading {
+  font-weight: 500;
+  font-family: 'Livvic';
+  color: rgb(81, 66, 66);
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.modern-agriculture-heading {
+  font-family: 'Livvicsemibold';
+  font-size: 2.7rem;
+  color: rgb(81, 66, 66);
+}
+
+.modern-agriculture-description {
+  font-size: 18px;
+  font-weight: 500;
+  text-align: justify;
+  color: black;
+  margin-top: 20px;
+  font-family: 'Quicksand';
+}
+.modern-agriculture-img {
+  position: absolute;
+  left: 0;
+  width: 100vw;
+  z-index: 1;
+  object-fit: contain;
+}

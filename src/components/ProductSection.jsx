@@ -1,29 +1,29 @@
-import React, { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import "./ProductSection.css";
+import './ProductSection.css';
 
 function ProductSection() {
-  useEffect(() => {
-    AOS.init({ duration: 2000, once: false });
-  }, []);
-
   return (
-    <section id="product" className="product-section">
-      <div className="product-content" >
-        <div className="product-text" data-aos="fade-right">
-          <h2>Our Product</h2>
-          <p>
-            At ELVRE, we are deeply committed to bringing you the authentic taste of jaggery powder, crafted from fresh sugarcane juice. Our journey is driven by a passion to preserve tradition while embracing innovation. Backed by a technology-driven team of professionals, we aim to modernize the jaggery-making process, reducing its labor-intensive nature through strategic collaborations with leading Indian institutes.
-            <br /><br />
-            We proudly offer high-quality, chemical-free jaggery powder— with no added colors or preservatives— ensuring purity, taste, and nutrition in every grain. Our sustainable, eco-friendly production practices, combined with a strong distribution network across India, allow us to deliver premium quality at competitive and affordable prices.
-          </p>
-        </div>
-
-        <div className="product-image" data-aos="fade-left">
-          <img src="image3.png" alt="Jaggery Product" />
-        </div>
+    <section
+      id="product"
+      className="product-section"
+      style={{
+        backgroundImage: `url(${process.env.PUBLIC_URL}/assets/productpacking.png)`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+      }}
+    >
+      <div className="product-content">
+        <h2 className="product-heading">Our Organic Jaggery Powder</h2>
+        <p className="product-description">
+         Pure, unrefined, and slow-crafted straight from sugarcane fields to your kitchen. Packed with nutrients, made with care, and free from chemicals or additives.
+        </p>
       </div>
+      <a
+       href="https://docs.google.com/forms/d/e/1FAIpQLSciH1m2eFeV4wN3Q-XoGAmLpZONoKcidottQM3s9UCXSigsjw/viewform?usp=dialog"
+       target="_blank"
+       rel="noopener noreferrer">
+       <button className="buy-now-btn">🛒Buy Now</button>
+      </a>
     </section>
   );
 }
