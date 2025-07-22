@@ -24,7 +24,7 @@ const ContactUs = () => {
       console.error("Error inserting feedback:", error.message);
       setStatus("Something went wrong. Please try again.");
     } else {
-      setStatus("Message Sent!");
+      setStatus("Feedback Sent!");
       setFormData({ Name: "", Label: "", Message: "" });
     }
   };
