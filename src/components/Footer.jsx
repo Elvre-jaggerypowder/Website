@@ -6,16 +6,16 @@ import "./Footer.css";
 
 const Footer = () => {
   const form = useRef();
-  const [status, setStatus] = useState(""); // ✅ Success/Error message
+  const [status, setStatus] = useState(""); 
 
   const sendEmail = (e) => {
     e.preventDefault();
 
     emailjs.sendForm(
-      "service_suvhk3j",         // ✅ Your Service ID
-      "template_2bpgw82",        // ✅ Your Template ID
+      "service_suvhk3j",        
+      "template_2bpgw82",      
       form.current,
-      "zPChkrLTWlnnSFFtp"        // ✅ Your Public Key
+      "zPChkrLTWlnnSFFtp"        
     ).then(
       () => {
         setStatus("✅ Thank you! Your message has been sent.");

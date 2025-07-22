@@ -41,3 +41,83 @@
   z-index: 1;
   object-fit: contain;
 }
+.modern-agriculture-section {
+  position: relative;
+  padding: 60px 80px;
+  min-height: 140vh;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.modern-agriculture-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+}
+
+.modern-agriculture-subheading {
+  font-weight: 500;
+  font-family: 'Livvic';
+  color: rgb(81, 66, 66);
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.modern-agriculture-heading {
+  font-family: 'Livvicsemibold';
+  font-size: 2.7rem;
+  color: rgb(81, 66, 66);
+}
+
+.modern-agriculture-description {
+  font-size: 18px;
+  font-weight: 500;
+  text-align: justify;
+  color: black;
+  margin-top: 20px;
+  font-family: 'Quicksand';
+}
+
+.modern-agriculture-img {
+  position: absolute;
+  left: 0;
+  width: 100vw;
+  z-index: 1;
+  object-fit: contain;
+}
+
+/* ✅ Mobile responsive styles */
+@media (max-width: 768px) {
+  .modern-agriculture-section {
+    padding: 30px 0px;
+    min-height: auto;
+    text-align: justify;
+  }
+
+  .modern-agriculture-content {
+    margin-top: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+    max-width: 100%;
+  }
+
+  .modern-agriculture-subheading {
+    font-size: 1.5rem;
+  }
+
+  .modern-agriculture-heading {
+    font-size: 2rem;
+  }
+
+  .modern-agriculture-description {
+    font-size: 1rem;
+    text-align: justify;
+  }
+
+  .modern-agriculture-img {
+    position: static;
+    width: 110%;
+    margin-top: -20px;
+    margin-bottom: -35px;
+  }
+}

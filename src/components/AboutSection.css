@@ -71,22 +71,44 @@
   /* flex-shrink: 2; */
 }
 
-/* 🔁 Responsive design */
+@media (max-width: 768px) {
+  .about-images {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+  }
+  .about-images img {
+    width: 100%; /* adjust width as needed */
+    max-width: 500px;
+  }
+  .img-center {
+    margin-top: -410px;
+    margin-left: 60px;
+  }
+  .img-side {
+    margin-left: -160px;
+  }
+}
 @media (max-width: 768px) {
   .about-section {
-    padding: 30px;
+    padding: 30px 20px;
+    height: auto;
   }
 
-  .about-images {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+  .about-intro {
+    font-size: 24px;
+    text-align: center;
   }
 
-  .img-side,
-  .img-center {
-    width: 80%;
-    max-width: 300px;
-    transform: none;
+  .about-heading {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .about-description {
+    font-size: 16px;
+    text-align: justify;
   }
 }

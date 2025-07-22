@@ -47,3 +47,33 @@
   background-color: rgb(218, 169, 92);
   /* border-color: rgb(218, 169, 92); */
 }
+@media (max-width: 768px) {
+  .product-section {
+    max-width: 1100px;
+    padding: 30px 20px 80px;
+    height: 100vh;
+    background-position: center top;
+    text-align: left;
+  }
+
+  .product-content {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .product-heading {
+    font-size: 2rem;
+  }
+
+  .product-description {
+    font-size: 1.1rem;
+    text-align: justify;
+  }
+
+  .buy-now-btn {
+    position: static;
+    margin-top: 550px;
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+}

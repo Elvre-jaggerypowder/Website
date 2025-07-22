@@ -34,3 +34,46 @@
 .nav-links a:hover {
   color: #f1a40f; 
 }
+/* Hide hamburger on desktop */
+.hamburger {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    margin-right: 1rem;
+  }
+
+  .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    background-color: rgb(123, 144, 65);
+    padding: 1rem 2rem;
+    z-index: 999;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    text-align: center;
+    padding: 1rem 0;
+    color: white;
+    border-bottom: 1px solid #514242;
+  }
+}

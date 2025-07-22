@@ -71,7 +71,7 @@ const ContactUs = () => {
             onChange={handleChange}
             required
           />
-          <button type="submit">SEND MESSAGE</button>
+          <button type="submit">SEND FEEDBACK</button>
           {status && <p className="status-message">{status}</p>}
         </form>
       </div>

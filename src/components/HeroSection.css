@@ -67,3 +67,50 @@
   background-color: rgb(218, 169, 92);
   color: #442626;
 }
+
+@media (max-width: 768px) {
+  .hero-section {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    margin: 0;
+    padding: 0;
+  }
+
+  .hero-text {
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    right: 10%;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    color: white;
+    font-size: 2.5rem;
+    padding: 0 10px;
+  }
+
+  .hero-text p {
+    color: white;
+    font-size: 1.9rem;
+    padding: 0 10px;
+    margin-top: 10px;
+  }
+
+  .discover-button {
+    position: absolute;
+    right: 20px;
+    bottom: 30px;
+    margin: 0;
+    padding: 8px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 22px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+}
+

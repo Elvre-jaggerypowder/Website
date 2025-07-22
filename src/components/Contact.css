@@ -77,3 +77,52 @@
   margin-top: 1rem;
   color: green;
 }
+@media only screen and (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+    padding: 2rem 1rem;
+  }
+
+  .contact-left, .contact-right {
+    max-width: 100%;
+    padding: 1rem 0;
+  }
+
+  .contact-left h3 {
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .contact-left h1 {
+    font-size: 1.8rem;
+    text-align: left;
+  }
+
+  .contact-left p {
+    font-size: 1rem;
+    text-align: left;
+    line-height: 1.6;
+  }
+
+  .contact-right {
+    gap: 1.2rem;
+  }
+
+  .contact-right input,
+  .contact-right textarea {
+    font-size: 0.95rem;
+    padding: 15px;
+    height: auto;
+  }
+
+  .contact-right button {
+    font-size: 1rem;
+    padding: 15px;
+    width: 100%;
+  }
+
+  .status-message {
+    text-align: center;
+    font-size: 1rem;
+  }
+}
