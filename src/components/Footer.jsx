@@ -41,7 +41,7 @@ const Footer = () => {
           <div className="social-icons">
             <a href="https://wa.me/your-number" target="_blank" rel="noreferrer"><FaWhatsapp /></a>
             <a href="https://facebook.com" target="_blank" rel="noreferrer"><FaFacebookF /></a>
-            <a href="https://instagram.com" target="_blank" rel="noreferrer"><FaInstagram /></a>
+            <a href="https://www.instagram.com/elvre_officals_/" target="_blank" rel="noreferrer"><FaInstagram /></a>
             <a href="https://linkedin.com" target="_blank" rel="noreferrer"><FaLinkedinIn /></a>
           </div>
           <div className="footer-policies">
