@@ -18,40 +18,12 @@
   font-family: 'Livvic';
 }
 
-.product-description {
-  font-weight: 400;
-  font-size: 1.4rem;
-  line-height: 1.6;
-  color: #ffffff;
-  text-align: justify;
-  font-family: 'Quicksand';
-}
 
-.buy-now-btn {
-  font-weight: 600;
-  font-family: 'Livvic';
-  position: absolute;
-  bottom: 150px;
-  right: 150px;
-  background-color: rgb(226, 191, 135);
-  color: rgb(68, 38, 38);
-  padding: 12px 24px;
-  border: none;
-  border-radius: 30px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.buy-now-btn:hover {
-  background-color: rgb(218, 169, 92);
-  /* border-color: rgb(218, 169, 92); */
-}
 @media (max-width: 768px) {
   .product-section {
     max-width: 1200px;
     padding: 30px 20px 80px;
-    height: 95vh;
+    height: 80vh;
     background-position: center top;
     text-align: left;
   }
@@ -63,17 +35,5 @@
 
   .product-heading {
     font-size: 2rem;
-  }
-
-  .product-description {
-    font-size: 1.1rem;
-    text-align: justify;
-  }
-
-  .buy-now-btn {
-    position: static;
-    margin-top: 490px;
-    padding: 10px 20px;
-    font-size: 16px;
   }
 }

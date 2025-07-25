@@ -14,7 +14,7 @@ function HowMadeSection() {
       <div className="howmade-content">
         <h2 className="howmade-heading">How ELVRE is Made</h2>
         <p className="howmade-description">
-         ELVRE jaggery is crafted using age-old traditional methods. It begins with freshly harvested sugarcane, which is crushed to extract juice, then slowly boiled in large iron pans over a wood fire. The thickened syrup is cooled and shaped before being sun-dried and ground into golden powder. Every step is done by hand  by farmers who turn simplicity into purity, with no chemicals or preservatives.
+        ElVRE Jaggery is made using traditional methods with modern techniques. Fresh sugarcane is crushed to get the juice, which is slowly boiled into jaggery syrup. The syrup is then dried and ground into golden powder. Every step is done by farmers, using no chemicals or preservatives—just pure, simple goodness."
         </p>
       </div>
     </section>

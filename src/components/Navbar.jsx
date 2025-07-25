@@ -1,12 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Navbar.css';
 import { Link as ScrollLink } from 'react-scroll';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  // Auto-close menu after 5 seconds
+  useEffect(() => {
+    let timer;
+    if (menuOpen) {
+      timer = setTimeout(() => {
+        setMenuOpen(false);
+      }, 5000);
+    }
+
+    return () => clearTimeout(timer); // Clean up timer if user clicks early
+  }, [menuOpen]);
+
   const handleLinkClick = () => {
-    setMenuOpen(false); // Close menu after clicking any link
+    setMenuOpen(false); // Close menu when a link is clicked
   };
 
   return (

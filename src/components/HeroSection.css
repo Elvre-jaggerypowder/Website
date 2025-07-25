@@ -48,26 +48,25 @@
     right: 20px;
   }
 }
-.discover-button {
+.buy-now-btn {
   font-weight: 600;
-  font-family: 'livvic';
-  margin-left: 1100px;
+  font-family: 'Livvic';
+  position: absolute;
+  bottom: 90px;
+  right: 150px;
   background-color: rgb(226, 191, 135);
   color: rgb(68, 38, 38);
+  padding: 12px 24px;
   border: none;
-  padding: 8px 24px;
-  border-radius: 22px;
+  border-radius: 30px;
   font-size: 16px;
   cursor: pointer;
-  margin-top: 550px;
   transition: background-color 0.3s ease;
 }
 
-.discover-button:hover {
+.buy-now-btn:hover {
   background-color: rgb(218, 169, 92);
-  color: #442626;
 }
-
 @media (max-width: 768px) {
   .hero-section {
     height: 100vh;
@@ -99,18 +98,12 @@
     padding: 0 10px;
     margin-top: 10px;
   }
-
-  .discover-button {
-    position: absolute;
-    right: 20px;
-    bottom: 30px;
-    margin: 0;
-    padding: 8px 20px;
+  .buy-now-btn {
+    position: static;
+    margin-left: 250px;
+    margin-top: 90vh;
+    padding: 10px 20px;
     font-size: 16px;
-    font-weight: 600;
-    border-radius: 22px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
   }
 }
 

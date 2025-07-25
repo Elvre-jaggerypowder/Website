@@ -49,7 +49,7 @@ const Footer = () => {
             <a href="#">Privacy Policy</a>
           </div>
           <p className="copyright">
-            ©Smart Agro. All Rights Reserved.
+            ©Elvre Enterprises Private Limited. All Rights Reserved.
           </p>
         </div>
 

@@ -8,18 +8,15 @@ function HeroSection() {
       style={{ backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/jaggery.png'})` }}
     >
       <div className="hero-text">
-        <h1>Pure Organic <span>Jaggery Powder</span></h1>
+        <h1>Medicinally Pure <span>Jaggery Powder</span></h1>
         <p>Handcrafted By Farmers</p>
       </div>
-      <button
-       onClick={() => {
-       document.getElementById('made')?.scrollIntoView({ behavior: 'smooth' });
-       }}
-       className="discover-button">
-
-        Discover More
-        </button>
-
+      <a
+       href="https://docs.google.com/forms/d/e/1FAIpQLSciH1m2eFeV4wN3Q-XoGAmLpZONoKcidottQM3s9UCXSigsjw/viewform?usp=dialog"
+       target="_blank"
+       rel="noopener noreferrer">
+       <button className="buy-now-btn">🛒Buy Now</button>
+      </a>
     </section>
   );
 }

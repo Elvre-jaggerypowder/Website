@@ -43,7 +43,7 @@ const ContactUs = () => {
             EMAIL<strong><br />elvreofficals@gmail.com</strong>
           </p>
           <p>
-            ADDRESS<strong><br />Haridwar</strong>
+            ADDRESS<strong><br />1st Floor, Sangam Tent House, Jawalapur, Haridwar, Uttrakhand, 249407</strong>
           </p>
         </div>
 
