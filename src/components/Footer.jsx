@@ -59,7 +59,6 @@ const Footer = () => {
           <ul>
             <li><ScrollLink to="hero" smooth={true} duration={500}>Home</ScrollLink></li>
             <li><ScrollLink to="about" smooth={true} duration={500}>About Us</ScrollLink></li>
-            <li><ScrollLink to="product" smooth={true} duration={500}>Our Products</ScrollLink></li>
             <li><ScrollLink to="testimonial" smooth={true} duration={500}>Testimonials</ScrollLink></li>
             <li><ScrollLink to="contact" smooth={true} duration={500}>Contact Us</ScrollLink></li>
           </ul>

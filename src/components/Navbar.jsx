@@ -34,9 +34,6 @@ const Navbar = () => {
         <ScrollLink to="about" smooth={true} duration={500} offset={-70} onClick={handleLinkClick}>
           About Us
         </ScrollLink>
-        <ScrollLink to="product" smooth={true} duration={500} offset={-70} onClick={handleLinkClick}>
-          Our Products
-        </ScrollLink>
         <ScrollLink to="testimonial" smooth={true} duration={500} offset={-70} onClick={handleLinkClick}>
           Testimonial
         </ScrollLink>
