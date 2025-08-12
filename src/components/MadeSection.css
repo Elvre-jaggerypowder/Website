@@ -33,7 +33,7 @@
 @media (max-width: 768px) {
   .howmade-section {
     padding: 3vh 4vw 6vh; /* Top-Bottom in vh, sides in vw */
-    height: 100vh; /* Auto so that it adjusts to content */
+    height: 90vh; /* Auto so that it adjusts to content */
     background-position: center;
     background-size: cover;
   }
