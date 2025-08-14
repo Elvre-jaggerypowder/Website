@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { supabase } from "../supabase/supabaseClient";
 import "./Contact.css";
 
 const ContactUs = () => {
@@ -18,14 +17,24 @@ const ContactUs = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const { error } = await supabase.from("feedback").insert([formData]);
+    try {
+      const response = await fetch("http://localhost:5000/api/feedback", { // ✅ Correct endpoint
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-    if (error) {
-      console.error("Error inserting feedback:", error.message);
-      setStatus("Something went wrong. Please try again.");
-    } else {
-      setStatus("Feedback Sent!");
-      setFormData({ Name: "", Label: "", Message: "" });
+      if (response.ok) {
+        setStatus("✅ Feedback Sent!");
+        setFormData({ Name: "", Label: "", Message: "" });
+      } else {
+        setStatus("❌ Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error submitting feedback:", error);
+      setStatus("❌ Something went wrong. Please try again.");
     }
   };
 
@@ -36,14 +45,26 @@ const ContactUs = () => {
           <h3>CONTACT NOW</h3>
           <h1>GET IN TOUCH NOW</h1>
           <p>
-            PHONE<strong><br />+91 7060998050<br /></strong>
-            <strong>+91 9411526973</strong>
+            PHONE
+            <strong>
+              <br />+91 7060998050
+              <br />
+            </strong>
+            <strong>+91 790639669</strong>
           </p>
           <p>
-            EMAIL<strong><br />elvreofficals@gmail.com</strong>
+            EMAIL
+            <strong>
+              <br />elvreofficals@gmail.com
+            </strong>
           </p>
           <p>
-            ADDRESS<strong><br />1st Floor, Sangam Tent House, Jawalapur, Haridwar, Uttrakhand, 249407</strong>
+            ADDRESS
+            <strong>
+              <br />
+              1st Floor, Sangam Tent House, Jawalapur, Haridwar, Uttrakhand,
+              249407
+            </strong>
           </p>
         </div>
 

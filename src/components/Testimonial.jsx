@@ -3,23 +3,18 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import "./Testimonial.css";
-import { supabase } from '../supabase/supabaseClient';
 
 const Testimonial = () => {
   const [feedbacks, setFeedbacks] = useState([]);
 
   useEffect(() => {
     const fetchFeedbacks = async () => {
-      const { data, error } = await supabase
-        .from("feedback")
-        .select("*")
-        .order("created_at", { ascending: false })
-        .limit(3);
-
-      if (error) {
-        console.error("Error fetching feedbacks:", error);
-      } else {
+      try {
+        const response = await fetch("http://localhost:5000/api/feedback"); // ✅ Correct endpoint
+        const data = await response.json();
         setFeedbacks(data);
+      } catch (error) {
+        console.error("Error fetching feedbacks:", error);
       }
     };
 
@@ -36,17 +31,19 @@ const Testimonial = () => {
       ) : (
         <Swiper
           modules={[Autoplay]}
-          autoplay={{ delay: 4000 }}
-          loop={feedbacks.length >= 3}
+          autoplay={{ delay: 4000, disableOnInteraction: false }}
+          loop={feedbacks.length >= 3} // Loop only if 3 or more feedbacks
           spaceBetween={30}
           slidesPerView={1}
         >
-          {feedbacks.map((item, index) => (
-            <SwiperSlide key={index}>
+          {feedbacks.map((item) => (
+            <SwiperSlide key={item.id}>
               <div className="testimonial-card">
                 <p className="testimonial-message">"{item.Message}"</p>
                 <p className="testimonial-name">- {item.Name}</p>
-                {item.Label && <p className="testimonial-label">{item.Label}</p>}
+                {item.Label && (
+                  <p className="testimonial-label">{item.Label}</p>
+                )}
               </div>
             </SwiperSlide>
           ))}
