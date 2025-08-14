@@ -7,10 +7,11 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
+// MySQL connection
 const db = mysql.createConnection({
-    host: 'localhost',   
-    user: 'root',           
-    password: 'disha12', 
+    host: 'localhost',      // your MySQL host
+    user: 'root',           // your MySQL username
+    password: 'disha12', // your MySQL password
     database: 'elvre'
 });
 
@@ -19,6 +20,7 @@ db.connect(err => {
     console.log('MySQL connected...');
 });
 
+// Insert feedback
 app.post('/api/feedback', (req, res) => {
     const { Name, Label, Message } = req.body;
     const sql = 'INSERT INTO feedback (Name, Label, Message) VALUES (?, ?, ?)';
@@ -28,6 +30,7 @@ app.post('/api/feedback', (req, res) => {
     });
 });
 
+// Fetch latest feedbacks
 app.get('/api/feedback', (req, res) => {
     const sql = 'SELECT * FROM feedback ORDER BY created_at DESC LIMIT 3';
     db.query(sql, (err, results) => {
