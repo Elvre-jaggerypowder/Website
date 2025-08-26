@@ -1,4 +1,5 @@
 import './HeroSection.css';
+import { Link } from 'react-router-dom';   // ✅ Add this import
 
 function HeroSection() {
   return (
@@ -26,13 +27,9 @@ function HeroSection() {
       </div>
 
       {/* Book Now button */}
-      <a
-        href="https://docs.google.com/forms/d/e/1FAIpQLSciH1m2eFeV4wN3Q-XoGAmLpZONoKcidottQM3s9UCXSigsjw/viewform?usp=dialog"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <Link to="/buynow">
         <button className="buy-now-btn">🛒Book Now</button>
-      </a>
+      </Link>
     </section>
   );
 }

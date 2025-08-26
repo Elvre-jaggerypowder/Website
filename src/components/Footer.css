@@ -227,18 +227,18 @@
   .footer-newsletter h3 {
     font-size: clamp(14px, 4vw, 16px);
     margin-top: -1rem;
-    margin-left: -1.8rem;
+    margin-left: -1.1rem;
   }
 
   .footer-newsletter p {
     font-size: clamp(12px, 3.5vw, 14px);
-    margin-left: -1.8rem;
+    margin-left: -1.1rem;
   }
 
   .footer-newsletter form {
     max-width: 100%;
     padding: 2vh 3vw;
-    margin-left: -1.5rem;
+    margin-left: -0.8rem;
   }
 
   .footer-newsletter input[type="email"],

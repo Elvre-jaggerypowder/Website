@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import "./Contact.css";
+import { supabase } from "../supabaseClient";
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
-    Name: "",
-    Label: "",
-    Message: "",
+    name: "",
+    label: "",
+    message: "",
   });
 
   const [status, setStatus] = useState("");
@@ -16,24 +17,28 @@ const ContactUs = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setStatus("");
 
     try {
-      const response = await fetch("http://localhost:5000/api/feedback", { // ✅ Correct endpoint
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const { error } = await supabase
+        .from("Feedbacks")
+        .insert([
+          {
+            name: formData.name,
+            label: formData.label,
+            message: formData.message,
+          },
+        ]);
 
-      if (response.ok) {
-        setStatus("✅ Feedback Sent!");
-        setFormData({ Name: "", Label: "", Message: "" });
-      } else {
+      if (error) {
+        console.error("Supabase insert error:", error); // 👀 Console me rahega, UI par nahi
         setStatus("❌ Something went wrong. Please try again.");
+      } else {
+        setStatus("✅ Feedback Sent!");
+        setFormData({ name: "", label: "", message: "" });
       }
-    } catch (error) {
-      console.error("Error submitting feedback:", error);
+    } catch (err) {
+      console.error("Unexpected error:", err); // 👀 Console me rahega
       setStatus("❌ Something went wrong. Please try again.");
     }
   };
@@ -50,7 +55,7 @@ const ContactUs = () => {
               <br />+91 7060998050
               <br />
             </strong>
-            <strong>+91 790639669</strong>
+            <strong>+91 7906396629</strong>
           </p>
           <p>
             EMAIL
@@ -71,24 +76,24 @@ const ContactUs = () => {
         <form className="contact-right" onSubmit={handleSubmit}>
           <input
             type="text"
-            name="Name"
+            name="name"
             placeholder="Your Name"
-            value={formData.Name}
+            value={formData.name}
             onChange={handleChange}
             required
           />
           <input
             type="text"
-            name="Label"
+            name="label"
             placeholder="Your Label"
-            value={formData.Label}
+            value={formData.label}
             onChange={handleChange}
             required
           />
           <textarea
-            name="Message"
+            name="message"
             placeholder="Your Message"
-            value={formData.Message}
+            value={formData.message}
             onChange={handleChange}
             required
           />

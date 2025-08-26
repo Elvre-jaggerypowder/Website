@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import "./Testimonial.css";
+import { supabase } from "../supabaseClient";
 
 const Testimonial = () => {
   const [feedbacks, setFeedbacks] = useState([]);
@@ -10,11 +11,16 @@ const Testimonial = () => {
   useEffect(() => {
     const fetchFeedbacks = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/feedback"); // ✅ Correct endpoint
-        const data = await response.json();
-        setFeedbacks(data);
+        const { data, error } = await supabase
+          .from("Feedbacks") // ✅ table ka exact naam
+          .select("id, name, message, label") // ✅ columns ka exact naam
+          .order("id", { ascending: false })
+          .limit(3);
+
+        if (error) throw error;
+        setFeedbacks(data || []);
       } catch (error) {
-        console.error("Error fetching feedbacks:", error);
+        console.error("Error fetching feedbacks:", error.message);
       }
     };
 
@@ -32,17 +38,17 @@ const Testimonial = () => {
         <Swiper
           modules={[Autoplay]}
           autoplay={{ delay: 4000, disableOnInteraction: false }}
-          loop={feedbacks.length >= 3} // Loop only if 3 or more feedbacks
+          loop={feedbacks.length > 1} // ✅ loop tabhi chalega jab 2+ feedbacks ho
           spaceBetween={30}
           slidesPerView={1}
         >
           {feedbacks.map((item) => (
             <SwiperSlide key={item.id}>
               <div className="testimonial-card">
-                <p className="testimonial-message">"{item.Message}"</p>
-                <p className="testimonial-name">- {item.Name}</p>
-                {item.Label && (
-                  <p className="testimonial-label">{item.Label}</p>
+                <p className="testimonial-message">"{item.message}"</p>
+                <p className="testimonial-name">- {item.name}</p>
+                {item.label && (
+                  <p className="testimonial-label">{item.label}</p>
                 )}
               </div>
             </SwiperSlide>
