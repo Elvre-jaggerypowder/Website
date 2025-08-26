@@ -134,8 +134,10 @@
   }
 
   .buy-now-logo {
-    width: 90px;
-    margin-bottom: 15px;
+    width: 100px;
+    margin-bottom: 0.4rem;
+    margin-left: 4.5rem;
+    margin-top: 0.4rem;
   }
 
   .buy-now-title {
@@ -145,7 +147,7 @@
   .form-row input,
   .form-row textarea {
     font-size: 14px;
-    padding: 10px;
+    padding: 12px;
   }
 
   .buy-now-submit {
