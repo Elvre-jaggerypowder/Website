@@ -5,7 +5,7 @@
   justify-content: center;
   align-items: center;
   padding: 20px;
-  background-image: url("C:\Users\disha\OneDrive\Desktop\elvre-react\public\assets\buynow.png"); /* public/assets/ se image aayegi */
+  background-image: url("C:\Users\disha\OneDrive\Desktop\elvre-react\public\assets\buynow.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -136,7 +136,7 @@
   .buy-now-logo {
     width: 100px;
     margin-bottom: 0.4rem;
-    margin-left: 4.5rem;
+    margin-left: 6rem;
     margin-top: 0.4rem;
   }
 

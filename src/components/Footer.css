@@ -238,7 +238,7 @@
   .footer-newsletter form {
     max-width: 100%;
     padding: 2vh 3vw;
-    margin-left: -0.8rem;
+    margin-left: 0.1rem;
   }
 
   .footer-newsletter input[type="email"],
