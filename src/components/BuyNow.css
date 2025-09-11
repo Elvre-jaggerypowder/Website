@@ -1,16 +1,11 @@
-/* ===== Page Background with Image ===== */
+/* ===== Page Background ===== */
 .buy-now-page {
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
-  background-image: url("C:\Users\disha\OneDrive\Desktop\elvre-react\public\assets\buynow.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }
-
 
 /* ===== Buy Now Card ===== */
 .buy-now-card {

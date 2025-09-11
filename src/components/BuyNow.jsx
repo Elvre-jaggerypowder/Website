@@ -51,7 +51,15 @@ export default function BuyNow() {
   };
 
   return (
-    <section className="buy-now-page">
+    <section
+      className="buy-now-page"
+      style={{
+        backgroundImage: `url(${process.env.PUBLIC_URL}/assets/buynow.png)`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       <div className="buy-now-card">
         {/* ✅ LOGO placed above "Buy Now" heading */}
         <div className="logo-container">
@@ -115,7 +123,7 @@ export default function BuyNow() {
               title="Please enter a valid 6 digit pincode"
               required
             />
-          </div>          
+          </div>
 
           <div className="form-row">
             <label>Address</label>
