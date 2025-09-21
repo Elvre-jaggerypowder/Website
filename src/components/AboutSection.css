@@ -5,37 +5,43 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 10px;
-  height: 800px;
+  min-height: 800px; /* use min-height instead of fixed height */
+  box-sizing: border-box;
 }
 
 .about-text-container {
   max-width: 1300px;
+  width: 100%;
+  padding: 0 15px; /* small padding for smaller screens */
 }
 
 .about-intro {
   text-transform: uppercase;
   color: rgb(59, 31, 31);
   font-weight: 600;
-  font-size: 35px;
+  font-size: clamp(20px, 3vw, 35px); /* responsive font size */
   letter-spacing: 1px;
-   font-family: 'Livvic';
+  font-family: 'Livvic', sans-serif;
+  text-align: center;
 }
 
 .about-heading {
-  font-size: 2.8rem;
+  font-size: clamp(1.6rem, 4vw, 2.8rem); /* responsive font size */
   color: rgb(123, 66, 47);
   font-weight: 900;
   margin: 10px 0 20px;
-  font-family: 'Livvic';
+  font-family: 'Livvic', sans-serif;
+  text-align: center;
 }
 
 .about-description {
-  font-family: 'Quicksand';
+  font-family: 'Quicksand', sans-serif;
   font-weight: 500;
-  font-size: 18px;
+  font-size: clamp(14px, 2vw, 18px);
   line-height: 1.9;
   color: black;
   text-align: justify;
+  padding: 0 10px;
 }
 
 .about-images {
@@ -44,10 +50,11 @@
   align-items: center;
   margin-top: 10px;
   gap: 10px; 
+  flex-wrap: wrap; /* ensures wrapping on smaller screens */
 }
 
-.img-side1{ 
-  width: 600px;
+.img-side1 { 
+  width: clamp(250px, 45vw, 600px);
   height: auto;
   object-fit: contain;
   margin-bottom: 200px;
@@ -55,7 +62,7 @@
 }
 
 .img-side {
-  width: 550px;
+  width: clamp(200px, 40vw, 550px);
   height: auto;
   object-fit: contain;
   margin-right: -50px;
@@ -63,33 +70,40 @@
 }
 
 .img-center {
-  width: 500px;
+  width: clamp(200px, 35vw, 500px);
   height: auto;
   object-fit: contain;
   margin-left: -380px;
   margin-bottom: 130px;
 }
 
+@media (max-width: 992px) {
+  .img-side1 {
+    margin-left: -60px;
+    margin-bottom: 100px;
+  }
+
+  .img-side {
+    margin-right: -25px;
+    margin-top: -90px;
+  }
+
+  .img-center {
+    margin-left: -180px;
+    margin-bottom: 70px;
+  }
+}
+
 @media (max-width: 768px) {
   .about-section {
     padding: 20px;
-    height: 100vh; 
+    min-height: auto; 
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
 
-  .about-intro {
-    font-size: 20px;
-  }
-
-  .about-heading {
-    font-size: 1.6rem;
-  }
-
   .about-description {
-    font-size: 14px;
-    font-weight: 500;
     line-height: 1.6;
   }
 
@@ -102,7 +116,7 @@
     width: 100%;
     max-width: 400px;
     height: auto;
-    margin: 20px;
+    margin: 20px auto;
     margin-top: -25px;
   }
 
@@ -111,4 +125,3 @@
     gap: 0;
   }
 }
-
