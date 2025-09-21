@@ -45,7 +45,7 @@ const Footer = () => {
             <a href="https://www.linkedin.com/company/elvre-enterprised-private-limited/" target="_blank" rel="noreferrer"><FaLinkedinIn /></a>
           </div>
           <div className="footer-policies">
-            <a href="#">Terms & Conditions</a>
+            <a href="/terms.html" target="_blank" rel="noreferrer">Terms & Conditions</a>
             <a href="#">Privacy Policy</a>
           </div>
           <p className="copyright">
