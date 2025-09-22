@@ -3,9 +3,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: transparent; 
-  padding: 10px 40px;
-  position: fixed; 
+  background-color:#263C28;
+  padding: 2px 40px;
   width: 100%;
   top: 0;
   z-index: 1000;
@@ -61,7 +60,7 @@
     top: 70px;
     right: 0;
     width: 100%;
-    background-color: rgb(123, 144, 65);
+    background-color:#263C28;
     padding: 1rem 2rem;
     z-index: 999;
   }
