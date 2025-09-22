@@ -4,29 +4,32 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 10px;
-  min-height: 800px; /* use min-height instead of fixed height */
+  margin-bottom: 0; /* removed extra gap */
+  min-height: auto; /* flexible height */
   box-sizing: border-box;
+  padding-bottom: 0;
+  border-bottom: 0;
+  gap: 0;
 }
 
 .about-text-container {
   max-width: 1300px;
   width: 100%;
-  padding: 0 15px; /* small padding for smaller screens */
+  padding: 0 15px;
 }
 
 .about-intro {
   text-transform: uppercase;
   color: rgb(59, 31, 31);
   font-weight: 600;
-  font-size: clamp(20px, 3vw, 35px); /* responsive font size */
+  font-size: clamp(20px, 3vw, 35px);
   letter-spacing: 1px;
   font-family: 'Livvic', sans-serif;
   text-align: center;
 }
 
 .about-heading {
-  font-size: clamp(1.6rem, 4vw, 2.8rem); /* responsive font size */
+  font-size: clamp(1.6rem, 4vw, 2.8rem);
   color: rgb(123, 66, 47);
   font-weight: 900;
   margin: 10px 0 20px;
@@ -47,18 +50,22 @@
 .about-images {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: justify;
   margin-top: 10px;
   gap: 10px; 
-  flex-wrap: wrap; /* ensures wrapping on smaller screens */
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  gap: 0;
 }
 
 .img-side1 { 
   width: clamp(250px, 45vw, 600px);
   height: auto;
   object-fit: contain;
-  margin-bottom: 200px;
+  margin-bottom: 0;   /* FIX: removed extra 200px */
   margin-left: -120px;
+  
 }
 
 .img-side {
@@ -74,13 +81,15 @@
   height: auto;
   object-fit: contain;
   margin-left: -380px;
-  margin-bottom: 130px;
+  position: absolute;
+  
+  
 }
 
 @media (max-width: 992px) {
   .img-side1 {
     margin-left: -60px;
-    margin-bottom: 100px;
+    margin-bottom: 0; /* removed extra */
   }
 
   .img-side {
@@ -90,7 +99,7 @@
 
   .img-center {
     margin-left: -180px;
-    margin-bottom: 70px;
+    margin-bottom: 0; /* removed extra */
   }
 }
 
@@ -116,8 +125,7 @@
     width: 100%;
     max-width: 400px;
     height: auto;
-    margin: 20px auto;
-    margin-top: -25px;
+    margin: 20px auto 0;
   }
 
   .about-images {
