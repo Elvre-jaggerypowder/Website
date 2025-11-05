@@ -13,8 +13,8 @@ const Testimonial = () => {
       try {
         const { data, error } = await supabase
           .from("Feedbacks") // ✅ table ka exact naam
-          .select("id, name, message, label") // ✅ columns ka exact naam
-          .order("id", { ascending: false })
+          .select("id, name, message, label, created_at") // ✅ columns + created_at agar hai
+          .order("created_at", { ascending: false }) // ✅ latest feedbacks first
           .limit(3);
 
         if (error) throw error;
@@ -25,6 +25,29 @@ const Testimonial = () => {
     };
 
     fetchFeedbacks();
+
+    // ✅ Realtime listener for new feedbacks
+    const channel = supabase
+      .channel("public:Feedbacks")
+      .on(
+        "postgres_changes",
+        { event: "INSERT", schema: "public", table: "Feedbacks" },
+        (payload) => {
+          console.log("New feedback added:", payload.new);
+          setFeedbacks((prev) => {
+            const updated = [payload.new, ...prev];
+            // remove duplicates (by id) & keep only latest 3
+            const unique = Array.from(new Map(updated.map((f) => [f.id, f])).values());
+            return unique.slice(0, 3);
+          });
+        }
+      )
+      .subscribe();
+
+    // cleanup
+    return () => {
+      supabase.removeChannel(channel);
+    };
   }, []);
 
   return (
