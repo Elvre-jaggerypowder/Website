@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { supabase } from "../supabaseClient";
-import "./BuyNow.css";  // apni CSS file import kar li
+import "./BuyNow.css";
 
 const initialState = {
   name: "",
@@ -23,11 +23,14 @@ export default function BuyNow() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    setStatus("");
+    if (loading) return;
+
     setLoading(true);
+    setStatus("");
 
     try {
-      const { error } = await supabase.from("BuyNow").insert([
+      // 1️⃣ SAVE ORDER IN DATABASE
+      const { error: dbError } = await supabase.from("BuyNow").insert([
         {
           name: form.name.trim(),
           email: form.email.trim(),
@@ -38,12 +41,33 @@ export default function BuyNow() {
         },
       ]);
 
-      if (error) throw error;
+      if (dbError) throw dbError;
 
-      setStatus("✅ Order placed successfully!");
+      const payload = {
+        name: form.name,
+        email: form.email,
+        phone: form.phone_number,
+        address: form.address,
+        pincode: form.pincode,
+        quantity: form.quantity,
+      };
+
+      // 2️⃣ SEND CUSTOMER EMAIL
+      const { error: customerError } =
+        await supabase.functions.invoke("send-customer-email", {
+          body: payload,
+        });
+
+      if (customerError) {
+        console.error("Customer email error:", customerError);
+        throw customerError;
+      }
+
+
+      setStatus("✅ Order placed successfully! Emails sent.");
       setForm(initialState);
     } catch (err) {
-      console.error("Insert error:", err);
+      console.error("Order error:", err);
       setStatus("❌ Failed to place order. Please try again.");
     } finally {
       setLoading(false);
@@ -61,7 +85,6 @@ export default function BuyNow() {
       }}
     >
       <div className="buy-now-card">
-        {/* ✅ LOGO placed above "Buy Now" heading */}
         <div className="logo-container">
           <img
             src={`${process.env.PUBLIC_URL}/assets/Blackelvre.png`}
