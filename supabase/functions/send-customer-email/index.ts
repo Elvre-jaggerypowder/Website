@@ -32,7 +32,7 @@ serve(async (req) => {
           <p>Hi ${name},</p>
           <p>Thank you for choosing <b>ELVRE Jaggery Powder</b>. Your jaggery powder is currently being prepared fresh. Once ready, it will be carefully packed and dispatched straight to your doorstep.</p>
           <p>For any assistance, feel free to contact ELVRE Customer Care.</p>
-          <p>Warm regards,<br/>Team 𝓔𝓵𝓿𝓻𝓮</p>
+          <p>Warm regards,<br/>Team 𝓔𝓵𝓿𝓻𝓮,<br/>+91 79063 96629</p>
         `,
       }),
     });
